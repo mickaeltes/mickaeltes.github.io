@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="lt18i主题为您提供索尼LT18i/爱立信Xperia Neo经典主题下载与安装指南，包含高清壁纸、UI图标包及个性化定制教程。">
+    <meta name="keywords" content="lt18i主题, 索尼LT18i主题, Xperia Neo主题, Android主题下载, 手机主题定制">
+    <title>lt18i主题-经典机型Xperia Neo主题下载与个性化定制指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #7f8c8d;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -13px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        /* Theme Cards */
+        .theme-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 160px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .card-content {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+        }
+
+        .download-btn {
+            background-color: #f0f2f5;
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .download-btn:hover {
+            background-color: #e1e4e8;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            margin-top: 40px;
+        }
+
+        .guide-steps {
+            counter-reset: step;
+            list-style: none;
+        }
+
+        .guide-steps li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 24px;
+        }
+
+        .guide-steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+        }
+
+        .guide-steps h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .guide-steps p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specs Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .specs-table td {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .specs-table td:first-child {
+            color: var(--text-light);
+            width: 40%;
+        }
+
+        .specs-table td:last-child {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 12px;
+            }
+
+            nav ul {
+                margin-top: 12px;
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">LT18I<span>主题</span></div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#themes">主题下载</a></li>
+                <li><a href="#guide">安装指南</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>让经典索尼 LT18I 重焕新生</h1>
+        <p>专为索尼 Xperia Neo (LT18i) 设计的高清主题库，提供丰富的壁纸、图标包及个性化界面，让您的经典机型焕发潮流魅力。</p>
+        <div class="hero-buttons">
+            <a href="#themes" class="btn btn-primary">浏览主题</a>
+            <a href="#guide" class="btn btn-outline">查看安装教程</a>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+    
+    <!-- Featured Themes -->
+    <section id="themes">
+        <div class="section-header">
+            <h2 class="section-title">热门主题推荐</h2>
+            <a href="#" class="view-all">查看全部 &rarr;</a>
+        </div>
+        <div class="grid">
+            <!-- Card 1 -->
+            <article class="theme-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/lt18i1/400/300" alt="极简纯色主题">
+                    <span class="card-badge">热门</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">极简纯色壁纸包</h3>
+                    <p class="card-desc">精选多款低饱和度纯色背景，搭配统一风格的图标，打造清爽、舒适的视觉体验。</p>
+                    <div class="card-meta">
+                        <span>1.2MB</span>
+                        <a href="#" class="download-btn">下载主题</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="theme-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/lt18i2/400/300" alt="自然风景主题">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">清新自然风景</h3>
+                    <p class="card-desc">收录山川、湖泊与森林高清壁纸，感受大自然的宁静与治愈，适合喜欢户外风格的用户。</p>
+                    <div class="card-meta">
+                        <span>3.5MB</span>
+                        <a href="#" class="download-btn">下载主题</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="theme-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/lt18i3/400/300" alt="赛博朋克主题">
+                    <span class="card-badge">独家</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">赛博朋克霓虹</h3>
+                    <p class="card-desc">深色背景搭配高亮霓虹色系图标，极具未来感，彰显您的个性与潮流态度。</p>
+                    <div class="card-meta">
+                        <span>2.1MB</span>
+                        <a href="#" class="download-btn">下载主题</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="theme-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/lt18i4/400/300" alt="二次元动漫主题">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">二次元动漫精选</h3>
+                    <p class="card-desc">精选热门动漫角色高清壁纸，为您的设备增添青春活力与二次元色彩。</p>
+                    <div class="card-meta">
+                        <span>4.8MB</span>
+                        <a href="#" class="download-btn">下载主题</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Installation Guide -->
+    <section id="guide" class="guide-section">
+        <div class="section-header" style="margin-bottom: 24px;">
+            <h2 class="section-title">LT18i 主题安装指南</h2>
+        </div>
+        
+        <h3>设备参数参考</h3>
+        <table class="specs-table">
+            <tr>
+                <td>设备型号</td>
+                <td>LT18i (Xperia Neo)</td>
+            </tr>
+            <tr>
+                <td>系统版本</td>
+                <td>Android 2.3.4 - 4.1.2 (原生支持)</td>
+            </tr>
+            <tr>
+                <td>分辨率</td>
+                <td>480 x 854 (FWVGA)</td>
+            </tr>
+            <tr>
+                <td>主题格式</td>
+                <td>.thm (索尼官方主题格式)</td>
+            </tr>
+        </table>
+
+        <ul class="guide-steps">
+            <li>
+                <h3>1. 下载主题文件</h3>
+                <p>点击上方主题卡片中的“下载主题”按钮，将 .thm 文件保存到手机存储根目录（如 SD 卡根目录）。</p>
+            </li>
+            <li>
+                <h3>2. 进入主题商店</h3>
+                <p>在手机桌面上找到“主题”或“个性化”应用图标并打开，进入主题浏览界面。</p>
+            </li>
+            <li>
+                <h3>3. 安装本地主题</h3>
+                <p>在主题界面中，点击右下角的“菜单”键，选择“安装主题”或“从存储设备安装”，找到下载的文件进行安装。</p>
+            </li>
+            <li>
+                <h3>4. 应用主题</h3>
+                <p>安装成功后，在列表中点击“应用”即可立即生效。如需恢复默认设置，可在设置中选择“还原默认主题”。</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="section-header">
+            <h2 class="section-title">常见问题解答</h2>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <span class="faq-question">主题安装后无法显示？</span>
+                <span class="faq-answer">请检查是否下载了正确格式的 .thm 文件，并确保主题文件未损坏。尝试将文件移动到手机内部存储根目录后再安装。</span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-question">主题支持更换图标吗？</span>
+                <span class="faq-answer">部分主题包含自定义图标包，但并非所有主题都支持。安装时请留意主题描述中的图标说明。</span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-question">安装主题会导致系统变慢吗？</span>
+                <span class="faq-answer">一般不会。主题仅改变视觉样式，不会影响系统底层运行。但如果安装了包含大量图标或特效的主题，可能会轻微占用少量内存。</span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-question">主题可以分享给朋友吗？</span>
+                <span class="faq-answer">可以。您可以将下载的 .thm 文件通过蓝牙、数据线或网盘分享给其他 LT18i 用户。</span>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>关于 LT18I 主题</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6;">我们致力于为索尼经典机型 LT18i (Xperia Neo) 提供高质量、易安装的个性化主题资源，帮助用户找回经典设备的独特魅力。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">热门推荐</a></li>
+                <li><a href="#">最新更新</a></li>
+                <li><a href="#">壁纸专区</a></li>
+                <li><a href="#">图标包下载</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>帮助支持</h4>
+            <ul>
+                <li><a href="#">安装教程</a></li>
+                <li><a href="#">常见问题</a></li>
+                <li><a href="#">提交反馈</a></li>
+                <li><a href="#">版权声明</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 LT18I主题下载站. 保留所有权利. 本站资源仅供个人学习与交流使用。</p>
+    </div>
+</footer>
+
+</body>
+</html>
