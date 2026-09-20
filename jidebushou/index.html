@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="及的部首查询与解析页面。详细介绍汉字“及”的部首、笔画数、拼音、基本释义、组词例句以及相关字词辨析，帮助用户快速了解汉字结构。">
+    <meta name="keywords" content="及的部首, 汉字部首查询, 汉字结构, 汉字释义, 汉语字典">
+    <title>及的部首-汉字结构解析与组词查询</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary-color: #f3f4f6;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --bg-color: #ffffff;
+            --border-color: #e5e7eb;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 1.5rem;
+            background-color: var(--primary-color);
+            margin-right: 0.75rem;
+            border-radius: 3px;
+        }
+
+        /* Character Card */
+        .character-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .char-display {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .char-main {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.05em;
+        }
+
+        .char-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .meta-item {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-value {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Detailed Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+
+        .info-block h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .info-block p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: #eff6ff;
+            color: var(--primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Dictionary Section */
+        .dictionary-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .dict-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .dict-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+            border-color: var(--primary-color);
+        }
+
+        .dict-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dict-words {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .dict-meaning {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        .dict-arrow {
+            color: #9ca3af;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f9fafb;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .char-main {
+                font-size: 6rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-content">
+        <div class="logo">汉字<span>字典</span></div>
+        <nav>
+            <a href="#">首页</a>
+            <a href="#">部首索引</a>
+            <a href="#">笔画查询</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>及的部首</h1>
+        <p>汉字“及”的部首解析、笔画数、拼音、基本释义及相关组词查询。</p>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="输入汉字查询...">
+        </div>
+    </div>
+</section>
+
+<main class="container">
+    
+    <!-- Character Detail Section -->
+    <section class="character-card">
+        <div class="char-display">
+            <div class="char-main">及</div>
+            <p style="color: var(--text-light);">读音：jí</p>
+        </div>
+
+        <div class="char-meta-grid">
+            <div class="meta-item">
+                <div class="meta-label">部首</div>
+                <div class="meta-value">⺁ (𠂆)</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">总笔画</div>
+                <div class="meta-value">3画</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">结构</div>
+                <div class="meta-value">独体字</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">五笔</div>
+                <div class="meta-value">EYI</div>
+            </div>
+        </div>
+
+        <div class="info-grid" style="margin-top: 3rem;">
+            <div class="info-block">
+                <h3>部首信息</h3>
+                <p><strong>部首名称：</strong>及字部（或称：厂字头变体）</p>
+                <p><strong>部首位置：</strong>在左下角（或称：左下包围结构）</p>
+                <p><strong>部首笔画：</strong>2画</p>
+                <p>“及”字是汉字中笔画较少的汉字之一，其部首在书写时通常作为左下部分，用于支撑整个字的结构。</p>
+            </div>
+            <div class="info-block">
+                <h3>基本释义</h3>
+                <p><strong>1. 从后头赶上或达到：</strong>及格、及第、力所不及。</p>
+                <p><strong>2. 到，至：</strong>及至、光阴及。</p>
+                <p><strong>3. 赶上，比得上：</strong>望尘莫及、自愧不如。</p>
+                <p><strong>4. 达到（某种程度）：</strong>及早、及格。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Words Section -->
+    <section>
+        <div class="section-title">常用组词</div>
+        <div class="dictionary-list">
+            <div class="dict-item">
+                <div class="dict-content">
+                    <span class="dict-words">及格</span>
+                    <span class="dict-meaning">达到规定的标准</span>
+                </div>
+                <span class="dict-arrow">→</span>
+            </div>
+            <div class="dict-item">
+                <div class="dict-content">
+                    <span class="dict-words">及时</span>
+                    <span class="dict-meaning">抓住有利的时机；不迟延</span>
+                </div>
+                <span class="dict-arrow">→</span>
+            </div>
+            <div class="dict-item">
+                <div class="dict-content">
+                    <span class="dict-words">及早</span>
+                    <span class="dict-meaning">在规定的时间之前</span>
+                </div>
+                <span class="dict-arrow">→</span>
+            </div>
+            <div class="dict-item">
+                <div class="dict-content">
+                    <span class="dict-words">力所不及</span>
+                    <span class="dict-meaning">凭自己的力量不能做到</span>
+                </div>
+                <span class="dict-arrow">→</span>
+            </div>
+            <div class="dict-item">
+                <div class="dict-content">
+                    <span class="dict-words">望尘莫及</span>
+                    <span class="dict-meaning">远远望见前面骑马的人走过扬起的尘土而不能赶上</span>
+                </div>
+                <span class="dict-arrow">→</span>
+            </div>
+            <div class="dict-item">
+                <div class="dict-content">
+                    <span class="dict-words">波及</span>
+                    <span class="dict-meaning">像波浪那样扩散开来</span>
+                </div>
+                <span class="dict-arrow">→</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Idioms Section -->
+    <section style="margin-top: 3rem;">
+        <div class="section-title">成语与常用语</div>
+        <div class="dictionary-list">
+            <div class="dict-item">
+                <div class="dict-content">
+                    <span class="dict-words">从长计议</span>
+                    <span class="dict-meaning">慢慢地多加商量</span>
+                </div>
+                <span class="dict-arrow">→</span>
+            </div>
+            <div class="dict-item">
+                <div class="dict-content">
+                    <span class="dict-words">推陈出新</span>
+                    <span class="dict-meaning">去掉旧事物的糟粕，取其精华，并使它向新的方向发展</span>
+                </div>
+                <span class="dict-arrow">→</span>
+            </div>
+            <div class="dict-item">
+                <div class="dict-content">
+                    <span class="dict-words">事半功倍</span>
+                    <span class="dict-meaning">指做事得法，因而费力小，收效大</span>
+                </div>
+                <span class="dict-arrow">→</span>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>本页面仅供汉字学习与查询使用，数据来源基于通用汉语字典。</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">&copy; 2023 汉字字典查询服务</p>
+    </div>
+</footer>
+
+</body>
+</html>
