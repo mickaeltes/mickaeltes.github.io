@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="冒险岛弓箭手技能详解：全职业转职路线、技能加点攻略、属性配比及实战技巧指南。">
+    <meta name="keywords" content="冒险岛弓箭手技能,冒险岛箭神技能,冒险岛游侠技能,冒险岛神射手技能,冒险岛弓箭手加点">
+    <title>冒险岛弓箭手技能 - 职业转职路线与实战加点攻略</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2d8a4e;
+            --secondary-color: #f0a500;
+            --accent-color: #d32f2f;
+            --bg-dark: #1a1a1a;
+            --bg-card: #2b2b2b;
+            --text-main: #ffffff;
+            --text-sub: #b0b0b0;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=');
+            opacity: 0.3;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #236d3d;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 1rem;
+            color: var(--text-sub);
+            font-weight: normal;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        /* Class Cards */
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .class-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid #333;
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .class-header {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .class-header.shooter {
+            background-image: linear-gradient(to right, #4b6cb7, #182848);
+        }
+
+        .class-header.ranger {
+            background-image: linear-gradient(to right, #f12711, #f5af19);
+        }
+
+        .class-header.bowmaster {
+            background-image: linear-gradient(to right, #11998e, #38ef7d);
+        }
+
+        .class-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .class-body {
+            padding: 1.5rem;
+        }
+
+        .class-body h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .class-body p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+        }
+
+        /* Skill Table */
+        .skill-table-container {
+            overflow-x: auto;
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #333;
+        }
+
+        th {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .skill-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: #444;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 24px;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .skill-name {
+            font-weight: bold;
+        }
+
+        .rank {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .rank-s { background-color: #e74c3c; color: white; }
+        .rank-a { background-color: #3498db; color: white; }
+        .rank-b { background-color: #9b59b6; color: white; }
+        .rank-c { background-color: #95a5a6; color: white; }
+
+        /* Strategy Section */
+        .strategy-section {
+            background-color: var(--bg-card);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 4rem;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .strategy-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .strategy-item h4::before {
+            content: '>';
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background-color: var(--bg-card);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-sub);
+            display: none;
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 3rem 0;
+            margin-top: auto;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: var(--text-sub);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l14 0"></path><path d="M5 12l4 -4"></path><path d="M19 12l-4 -4"></path><path d="M7 12l0 -5"></path><path d="M17 12l0 -5"></path></svg>
+            <span>MapleGuide</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">技能大全</a></li>
+                <li><a href="#">加点攻略</a></li>
+                <li><a href="#">装备推荐</a></li>
+                <li><a href="#">职业对比</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    
+    <!-- Hero -->
+    <section class="hero">
+        <h1>冒险岛弓箭手技能</h1>
+        <p>从新手游侠到终极神射手，全面解析冒险岛弓箭手家族的核心技能、转职路线与实战加点策略。</p>
+        <button class="btn" onclick="document.getElementById('classes').scrollIntoView({behavior: 'smooth'})">开始探索</button>
+    </section>
+
+    <!-- Class Introduction -->
+    <section id="classes">
+        <div class="section-title">
+            <h2>弓箭手职业路线</h2>
+            <span>选择你的战斗风格</span>
+        </div>
+        <div class="class-grid">
+            <!-- Ranger -->
+            <article class="class-card">
+                <div class="class-header ranger">游侠</div>
+                <div class="class-body">
+                    <h3>游侠</h3>
+                    <p>弓箭手职业树的二转职业。以极快的攻击速度和远程物理输出著称，是练级效率极高的职业。</p>
+                    <div class="tag-container">
+                        <span class="tag">高攻速</span>
+                        <span class="tag">远程</span>
+                        <span class="tag">敏捷型</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Bowmaster -->
+            <article class="class-card">
+                <div class="class-header bowmaster">神射手</div>
+                <div class="class-body">
+                    <h3>神射手</h3>
+                    <p>弓箭手职业树的三转职业。专注于弓箭大师技艺，拥有强大的单体爆发技能和团队增益光环。</p>
+                    <div class="tag-container">
+                        <span class="tag">爆发</span>
+                        <span class="tag">光环</span>
+                        <span class="tag">团队辅助</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Wild Hunter -->
+            <article class="class-card">
+                <div class="class-header shooter">野熊猎人</div>
+                <div class="class-body">
+                    <h3>野熊猎人</h3>
+                    <p>弓箭手职业树的二转分支（需特定条件）。召唤野熊协助战斗，拥有独特的召唤兽机制。</p>
+                    <div class="tag-container">
+                        <span class="tag">召唤</span>
+                        <span class="tag">野熊</span>
+                        <span class="tag">特殊机制</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Skill Details -->
+    <section id="skills">
+        <div class="section-title">
+            <h2>核心技能解析</h2>
+            <span>掌握战斗的关键机制</span>
+        </div>
+        
+        <div class="skill-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%">技能名称</th>
+                        <th style="width: 15%">职业</th>
+                        <th style="width: 25%">描述</th>
+                        <th style="width: 20%">技能等级</th>
+                        <th style="width: 20%">评价</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="skill-icon">1</span><span class="skill-name">快速</span></td>
+                        <td>通用</td>
+                        <td>提升攻击速度的被动技能，是所有弓箭手的基础。</td>
+                        <td>20</td>
+                        <td><span class="rank rank-a">必满</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="skill-icon">2</span><span class="skill-name">箭雨</span></td>
+                        <td>游侠</td>
+                        <td>向前方扇形区域发射多支箭矢，是主要的群怪技能。</td>
+                        <td>20</td>
+                        <td><span class="rank rank-s">核心</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="skill-icon">3</span><span class="skill-name">多重箭</span></td>
+                        <td>游侠</td>
+                        <td>一次发射三支箭矢，对单个目标造成三段伤害。</td>
+                        <td>20</td>
+                        <td><span class="rank rank-b">推荐</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="skill-icon">4</span><span class="skill-name">箭矢反射</span></td>
+                        <td>神射手</td>
+                        <td>反弹敌人投射物伤害，极大提升生存能力。</td>
+                        <td>20</td>
+                        <td><span class="rank rank-s">生存</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="skill-icon">5</span><span class="skill-name">箭神之眼</span></td>
+                        <td>神射手</td>
+                        <td>增加命中率并使箭矢必定暴击，提升输出稳定性。</td>
+                        <td>30</td>
+                        <td><span class="rank rank-a">核心</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="skill-icon">6</span><span class="skill-name">野熊召唤</span></td>
+                        <td>野熊猎人</td>
+                        <td>召唤野熊进行攻击，野熊拥有独立的攻击逻辑。</td>
+                        <td>30</td>
+                        <td><span class="rank rank-a">特色</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Strategy -->
+    <section id="strategy">
+        <div class="section-title">
+            <h2>实战策略</h2>
+            <span>从新手到高手的进阶之路</span>
+        </div>
+
+        <div class="strategy-section">
+            <div class="strategy-grid">
+                <div class="strategy-item">
+                    <h4>属性配比建议</h4>
+                    <p>弓箭手是典型的敏捷型职业。建议将大部分点数加在敏捷上，以保持攻击速度和命中率的平衡。力量点数应足够装备当前等级的武器即可，多余点数可分配到运气以增加暴击率。</p>
+                </div>
+                <div class="strategy-item">
+                    <h4>技能加点顺序</h4>
+                    <p>优先升级 <strong>快速</strong> 和 <strong>远程攻击</strong> 等被动技能。在二转时，根据职业选择主修 <strong>箭雨</strong> (群怪) 或 <strong>多重箭</strong> (单体)。三转神射手必须优先点满 <strong>箭矢反射</strong> 和 <strong>箭神之眼</strong>。</p>
+                </div>
+                <div class="strategy-item">
+                    <h4>装备选择要点</h4>
+                    <p>选择带有“敏捷”或“攻击速度”属性的装备。对于神射手而言，高爆击率的武器和饰品是提升输出的关键。注意查看装备的“箭矢消耗”属性，选择消耗较少的高级箭矢。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="section-title">
+            <h2>常见问题 (FAQ)</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">弓箭手哪个职业刷图最快？</div>
+                <div class="faq-answer">游侠（Ranger）通常被认为刷图效率最高，特别是拥有箭雨技能后，清怪速度极快。神射手（Bowmaster）在单体BOSS战中表现更佳。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">快速技能必须加满吗？</div>
+                <div class="faq-answer">是的。快速技能是弓箭手提升攻速的关键，最高级可以增加3个攻击速度等级。对于依赖攻速的职业来说，这是不可或缺的。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何提升暴击率？</div>
+                <div class="faq-answer">可以通过装备（如幸运弓箭）、戒指属性、宠物技能以及神射手转职后的 <strong>箭神之眼</strong> 技能来大幅提升暴击率。</div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 MapleGuide. 冒险岛游戏资料站提供的技术支持与攻略整理。</p>
+        <p>本站内容仅供游戏参考，与Nexon公司无关。</p>
+    </div>
+</footer>
+
+<script>
+    // FAQ Toggle Logic
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all others
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            
+            // Toggle current
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
