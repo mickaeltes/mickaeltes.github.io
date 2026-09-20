@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国际跳棋 - 规则详解、对弈技巧与全球赛事资讯平台</title>
+    <meta name="description" content="国际跳棋专业门户，提供国际跳棋标准规则图文详解、专业对弈技巧策略、比赛视频教程及全球赛事动态。无论是初学者入门还是棋艺进阶，这里都是您的最佳选择。">
+    <meta name="keywords" content="国际跳棋, 跳棋规则, 跳棋技巧, 国际跳棋比赛, 跳棋入门, 跳棋策略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #ecf0f1;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        nav a:hover, nav a.active {
+            opacity: 1;
+            color: #f1c40f;
+        }
+
+        /* 移动端菜单按钮 */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #a93226;
+        }
+
+        /* 核心规则卡片 */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .rule-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .rule-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .rule-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rule-card h3::before {
+            content: '♟';
+        }
+
+        .rule-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .rule-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .rule-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* 对弈技巧 */
+        .techniques {
+            background-color: #eef2f5;
+            padding: 4rem 0;
+        }
+
+        .technique-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .technique-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .technique-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .technique-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .checkboard-preview {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .mini-board {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            width: 300px;
+            height: 300px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .cell {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+
+        .cell.light { background-color: #ecf0f1; }
+        .cell.dark { background-color: #34495e; }
+        .cell.highlight { background-color: #f1c40f; }
+        .piece { transition: transform 0.3s; }
+        .piece:hover { transform: scale(1.1); }
+
+        /* 赛事与资源 */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .news-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            font-size: 3rem;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-date {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .news-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .news-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background-color: white;
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+            }
+            .menu-toggle {
+                display: block;
+                order: 3;
+                margin-left: auto;
+            }
+            nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                padding: 1rem 0;
+                margin-top: 10px;
+            }
+            nav ul.show {
+                display: flex;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .technique-container {
+                flex-direction: column;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>♟</span> 国际跳棋之家
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#rules">规则详解</a></li>
+                    <li><a href="#techniques">对弈技巧</a></li>
+                    <li><a href="#news">赛事资讯</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>智力的博弈，思维的较量</h1>
+                <p>国际跳棋是一项历史悠久的纯策略棋类游戏。无论您是初学者想要了解规则，还是资深棋手寻求战术突破，这里都有您需要的专业内容。</p>
+                <a href="#rules" class="cta-button">立即开始学习</a>
+            </div>
+        </section>
+
+        <!-- 规则详解 -->
+        <section id="rules" class="container">
+            <h2 class="section-title">标准规则详解</h2>
+            <div class="rules-grid">
+                <article class="rule-card">
+                    <h3>基本走法</h3>
+                    <p>国际跳棋在8x8的棋盘上进行，双方各执20枚棋子，分别位于己方的前两排。棋子只能向斜前方移动一格。</p>
+                    <ul class="rule-list">
+                        <li><strong>普通棋子：</strong>只能向深色格方向前进。</li>
+                        <li><strong>斜向吃子：</strong>如果相邻斜格内有对方棋子且其后方为空，必须跳过该棋子将其吃掉。</li>
+                        <li><strong>王棋升级：</strong>当棋子到达对方底线时，变为王棋（在棋子上加一个棋子表示）。</li>
+                    </ul>
+                </article>
+
+                <article class="rule-card">
+                    <h3>王棋特权</h3>
+                    <p>王棋拥有极高的战术价值，可以向前或向后斜向移动或吃子。</p>
+                    <ul class="rule-list">
+                        <li><strong>多级跳：</strong>连续跳吃是国际跳棋的核心规则，一旦形成连跳，必须进行到底。</li>
+                        <li><strong>飞行王：</strong>在正规规则中，王棋可以像“飞行”一样一次跨越棋盘任意长度的空格进行移动或吃子。</li>
+                    </ul>
+                </article>
+
+                <article class="rule-card">
+                    <h3>胜负判定</h3>
+                    <p>游戏的目标是通过吃掉对方棋子或限制对方棋子移动，使其无法进行有效行动。</p>
+                    <ul class="rule-list">
+                        <li><strong>将死：</strong>当对方棋子被完全封锁，无法移动时，判定为被“将死”。</li>
+                        <li><strong>困毙：</strong>轮到一方行动时，所有棋子均无法移动，判负。</li>
+                        <li><strong>兵力劣势：</strong>在许多比赛规则中，当一方棋子数少于对方一半时，可申请判负。</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- 对弈技巧 -->
+        <section id="techniques" class="techniques">
+            <div class="container">
+                <h2 class="section-title">进阶对弈策略</h2>
+                <div class="technique-container">
+                    <div class="technique-content">
+                        <h2>控制中心与中心化</h2>
+                        <p>国际跳棋是极其讲究空间和控制的棋类游戏。占据棋盘的中央区域（深色格交叉点）至关重要，这不仅能让你拥有更多的移动选择，还能限制对方的行动范围。</p>
+                        <h3>关键战术：双跳与交叉</h3>
+                        <p>在实战中，制造“双跳”（即利用一子吃子后，该子仍有能力继续吃子）是扩大优势的快速手段。同时，学会运用“交叉”战术，将你的棋子布置在对方无法同时兼顾的交叉点上，是构筑防守壁垒的关键。</p>
+                    </div>
+                    <div class="checkboard-preview">
+                        <div class="mini-board" id="demoBoard">
+                            <!-- JS will populate this -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 赛事资讯 -->
+        <section id="news" class="container">
+            <h2 class="section-title">最新赛事与资讯</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">🏆</div>
+                    <div class="news-content">
+                        <span class="news-date">2023-10-15</span>
+                        <h3>2023年世界国际跳棋锦标赛落幕</h3>
+                        <p>来自俄罗斯的顶尖棋手在决赛中展现出惊人的心理素质，成功卫冕冠军头衔。本次比赛吸引了全球50多个国家的选手参与。</p>
+                        <a href="#" class="read-more">阅读详情 &rarr;</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-image">🌍</div>
+                    <div class="news-content">
+                        <span class="news-date">2023-09-28</span>
+                        <h3>国际跳棋正式成为亚运会竞赛项目</h3>
+                        <p>在近期举行的国际体育联合会理事会上，国际跳棋获得正式批准，将作为亚运会正式比赛项目，进一步推动该项运动在亚洲的发展。</p>
+                        <a href="#" class="read-more">阅读详情 &rarr;</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-image">🎓</div>
+                    <div class="news-content">
+                        <span class="news-date">2023-09-10</span>
+                        <h3>青少年国际跳棋公益培训计划启动</h3>
+                        <p>为了培养下一代棋类人才，本市多家棋院联合推出针对中小学生的免费公益培训班，旨在普及国际跳棋文化。</p>
+                        <a href="#" class="read-more">阅读详情 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">国际跳棋和国际象棋有什么区别？</div>
+                        <div class="faq-answer">最大的区别在于棋盘和棋子。国际跳棋在8x8的棋盘上进行，且所有棋子走法相同（王棋除外），没有兵种差异。国际象棋棋盘为8x8，且棋子走法各异。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">新手应该从哪种规则开始学？</div>
+                        <div class="faq-answer">建议从“国际跳棋100格规则”或“国际跳棋64格规则”的简化版开始。初学者建议先从64格规则（即棋盘大小）学起，规则相对简单，更容易上手。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">连跳必须进行吗？</div>
+                        <div class="faq-answer">是的。根据国际通用规则，如果棋子可以发起连跳，玩家必须进行连跳，不能选择跳过不吃子直接移动。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">哪里可以找到免费的在线对弈平台？</div>
+                        <div class="faq-answer">互联网上有许多专业的国际跳棋平台，如 Chess.com 等，它们提供从入门到大师级别的对局，并包含详细的棋局分析工具。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">国际跳棋之家致力于为全球棋友提供最权威的规则解读、最实用的战术分析和最及时的赛事资讯。让每个人都能享受智力运动的乐趣。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">规则大全</a></li>
+                        <li><a href="#">战术图解</a></li>
+                        <li><a href="#">在线对弈</a></li>
+                        <li><a href="#">棋具购买</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系合作</h4>
+                    <ul>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">广告投放</a></li>
+                        <li><a href="#">俱乐部合作</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 国际跳棋之家 版权所有. 仅供学习交流使用.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        function toggleMenu() {
+            const navList = document.getElementById('nav-list');
+            navList.classList.toggle('show');
+        }
+
+        // 生成简单的演示棋盘
+        function initBoard() {
+            const board = document.getElementById('demoBoard');
+            let html = '';
+            for (let row = 0; row < 8; row++) {
+                for (let col = 0; col < 8; col++) {
+                    const isLight = (row + col) % 2 === 0;
+                    let content = '';
+                    
+                    // 模拟一些棋子
+                    if (row < 3 && isLight) {
+                        content = '<span class="piece" style="color:#c0392b">●</span>';
+                    } else if (row > 4 && isLight) {
+                        content = '<span class="piece" style="color:#2c3e50">●</span>';
+                    }
+
+                    html += `<div class="cell ${isLight ? 'light' : 'dark'}">${content}</div>`;
+                }
+            }
+            board.innerHTML = html;
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initBoard);
+    </script>
+</body>
+</html>
