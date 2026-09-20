@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海贼王同人动漫-官方授权同人作品展示与社区交流平台</title>
+    <meta name="description" content="海贼王同人动漫官方平台，汇集海量高质量原创海贼王同人漫画、动画短片及角色衍生作品。提供正版授权、高清在线阅读、作品投稿及粉丝社区互动，探索海贼王世界的无限可能。">
+    <meta name="keywords" content="海贼王同人动漫,海贼王同人,海贼王漫画同人,海贼王动画同人,海贼王同人作品,海贼王同人社区">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ffcc00;
+            --secondary-color: #ff5e00;
+            --dark-bg: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+            --accent-blue: #0066cc;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .header-actions button:hover {
+            background-color: #e04e00;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--dark-bg)), 
+                        url('https://picsum.photos/seed/onepiece/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ddd;
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #000;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background-color: var(--secondary-color);
+        }
+
+        .view-all {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .view-all:hover {
+            color: var(--primary-color);
+        }
+
+        /* Grid System */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            background-color: #000;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #ccc;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #3d3d3d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #555;
+        }
+
+        /* Sidebar Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 900px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .widget-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #3d3d3d;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .rank-num {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+            width: 24px;
+            text-align: center;
+        }
+
+        .rank-info h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .rank-info span {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Category Tags */
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #3d3d3d;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            transition: background 0.2s;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: #000;
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: #252525;
+            padding: 40px var(--spacing-unit);
+            margin-top: 40px;
+        }
+
+        .info-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .info-content h2 {
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .info-content p {
+            margin-bottom: 16px;
+            color: #ccc;
+            text-align: justify;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 40px var(--spacing-unit) 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-bg);
+                padding: 20px;
+                border-bottom: 1px solid #333;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .header-actions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span>ONE</span>PIECE FAN
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新连载</a></li>
+                    <li><a href="#">热门同人</a></li>
+                    <li><a href="#">角色专区</a></li>
+                    <li><a href="#">投稿中心</a></li>
+                    <li><a href="#">社区论坛</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button>登录 / 注册</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索海贼王同人动漫的无限宇宙</h1>
+            <p>汇聚全球创作者的精彩脑洞，这里有你从未见过的路飞冒险、热血激战与感人故事。支持正版同人，支持创作者。</p>
+            <div class="hero-btns">
+                <a href="#" class="btn btn-primary">开始阅读</a>
+                <a href="#" class="btn btn-outline">发布作品</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="main-layout">
+            <!-- Left Content -->
+            <div class="content-area">
+                
+                <!-- Featured Section -->
+                <section class="featured-section">
+                    <div class="section-header">
+                        <h2 class="section-title">本周精选同人作品</h2>
+                        <a href="#" class="view-all">查看全部 &rarr;</a>
+                    </div>
+                    <div class="grid-3">
+                        <article class="card">
+                            <span class="card-tag">连载中</span>
+                            <img src="https://picsum.photos/seed/luffy2/400/500" alt="海贼王同人漫画封面" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">大航海时代：红发篇</h3>
+                                <div class="card-meta">
+                                    <span>作者：路飞号</span>
+                                    <span>更新至: 45话</span>
+                                </div>
+                                <p class="card-desc">如果红发香克斯在顶上战争没有失去手臂，路飞与香克斯的羁绊会有怎样的新篇章？热血与友情并存。</p>
+                                <div class="card-footer">
+                                    <div class="author">
+                                        <img src="https://picsum.photos/seed/avatar1/50/50" alt="头像" class="author-avatar">
+                                        <span>路飞号</span>
+                                    </div>
+                                    <a href="#" style="color:var(--primary-color); font-size:13px;">阅读更多 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <span class="card-tag">完结</span>
+                            <img src="https://picsum.photos/seed/nami3/400/500" alt="海贼王同人漫画封面" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">娜美：海市蜃楼之岛</h3>
+                                <div class="card-meta">
+                                    <span>作者：气象观测员</span>
+                                    <span>更新至: 全12话</span>
+                                </div>
+                                <p class="card-desc">以娜美为主视角的短篇同人，讲述了她在伟大航路中关于宝藏、欺骗与守护的独立冒险。</p>
+                                <div class="card-footer">
+                                    <div class="author">
+                                        <img src="https://picsum.photos/seed/avatar2/50/50" alt="头像" class="author-avatar">
+                                        <span>气象观测员</span>
+                                    </div>
+                                    <a href="#" style="color:var(--primary-color); font-size:13px;">阅读更多 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <span class="card-tag">动画短片</span>
+                            <img src="https://picsum.photos/seed/zoro4/400/500" alt="海贼王同人动画封面" class="card-image">
+                            <div class="card-content">
+                                <h3 class="card-title">剑豪之魂：罗罗诺亚</h3>
+                                <div class="card-meta">
+                                    <span>作者：二刀流</span>
+                                    <span>更新至: 3集</span>
+                                </div>
+                                <p class="card-desc">高质量3D同人动画，重现罗罗诺亚·索隆在东海篇的艰辛磨练，刀法与意志的极致展现。</p>
+                                <div class="card-footer">
+                                    <div class="author">
+                                        <img src="https://picsum.photos/seed/avatar3/50/50" alt="头像" class="author-avatar">
+                                        <span>二刀流</span>
+                                    </div>
+                                    <a href="#" style="color:var(--primary-color); font-size:13px;">观看动画 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Latest Updates -->
+                <section class="updates-section" style="margin-top: 48px;">
+                    <div class="section-header">
+                        <h2 class="section-title">最新更新动态</h2>
+                        <a href="#" class="view-all">查看所有更新 &rarr;</a>
+                    </div>
+                    <div class="grid-3">
+                        <article class="card" style="padding: 12px; height: auto;">
+                            <div style="display:flex; gap:12px; margin-bottom:8px;">
+                                <img src="https://picsum.photos/seed/ace5/100/140" style="width:100px; height:140px; object-fit:cover; border-radius:4px;" alt="封面">
+                                <div>
+                                    <h4 style="font-size:16px; margin-bottom:4px;">赤犬的背影</h4>
+                                    <p style="font-size:12px; color:#888; margin-bottom:8px;">作者：火拳</p>
+                                    <p style="font-size:13px; color:#ccc;">第12话：曾经的海军元帅，如今的孤独。</p>
+                                </div>
+                            </div>
+                            <div style="margin-top:8px; font-size:12px; color:var(--primary-color);">
+                                更新于：2小时前
+                            </div>
+                        </article>
+
+                        <article class="card" style="padding: 12px; height: auto;">
+                            <div style="display:flex; gap:12px; margin-bottom:8px;">
+                                <img src="https://picsum.photos/seed/buggy6/100/140" style="width:100px; height:140px; object-fit:cover; border-radius:4px;" alt="封面">
+                                <div>
+                                    <h4 style="font-size:16px; margin-bottom:4px;">巴基大王大冒险</h4>
+                                    <p style="font-size:12px; color:#888; margin-bottom:8px;">作者：王下七武海</p>
+                                    <p style="font-size:13px; color:#ccc;">第8话：如何在伟大航路开船店。</p>
+                                </div>
+                            </div>
+                            <div style="margin-top:8px; font-size:12px; color:var(--primary-color);">
+                                更新于：5小时前
+                            </div>
+                        </article>
+
+                        <article class="card" style="padding: 12px; height: auto;">
+                            <div style="display:flex; gap:12px; margin-bottom:8px;">
+                                <img src="https://picsum.photos/seed/shanks7/100/140" style="width:100px; height:140px; object-fit:cover; border-radius:4px;" alt="封面">
+                                <div>
+                                    <h4 style="font-size:16px; margin-bottom:4px;">鹰眼的孤独剑客</h4>
+                                    <p style="font-size:12px; color:#888; margin-bottom:8px;">作者：世界第一剑豪</p>
+                                    <p style="font-size:13px; color:#ccc;">第20话：与米霍克对峙。</p>
+                                </div>
+                            </div>
+                            <div style="margin-top:8px; font-size:12px; color:var(--primary-color);">
+                                更新于：昨天
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Guidelines Section -->
+                <section class="guidelines-section" style="margin-top: 48px; background-color: #252525; padding: 30px; border-radius: 8px;">
+                    <h2 class="section-title" style="margin-bottom: 20px;">投稿指南与版权声明</h2>
+                    <p style="margin-bottom: 15px; color: #ccc;">欢迎各位创作者来到海贼王同人动漫平台。为了保证社区的健康发展，请仔细阅读以下规定：</p>
+                    <ul style="color: #ccc; padding-left: 20px; line-height: 1.8;">
+                        <li><strong>内容原创：</strong> 所有上传作品必须为作者原创，严禁抄袭、搬运他人作品。</li>
+                        <li><strong>版权合规：</strong> 请勿上传涉及政治敏感、色情低俗或侵犯他人版权的内容。同人作品应基于原作设定进行二次创作。</li>
+                        <li><strong>同人界限：</strong> 请尊重原作者尾田荣一郎先生的版权，同人作品仅供娱乐交流，禁止用于商业牟利。</li>
+                        <li><strong>格式要求：</strong> 漫画请提供清晰的JPG/PNG图片；动画请提供MP4格式，分辨率不低于720P。</li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside>
+                <!-- Login Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">创作者登录</h3>
+                    <p style="font-size:13px; color:#888; margin-bottom:15px;">登录后可收藏作品、评论互动并投稿。</p>
+                    <div style="display:flex; gap:8px; margin-bottom:10px;">
+                        <input type="text" placeholder="用户名/邮箱" style="flex:1; padding:8px; border-radius:4px; border:1px solid #444; background:#222; color:#fff;">
+                    </div>
+                    <div style="display:flex; gap:8px; margin-bottom:15px;">
+                        <input type="password" placeholder="密码" style="flex:1; padding:8px; border-radius:4px; border:1px solid #444; background:#222; color:#fff;">
+                    </div>
+                    <button style="width:100%; padding:10px; background:var(--primary-color); border:none; border-radius:4px; font-weight:bold; cursor:pointer;">立即登录</button>
+                </div>
+
+                <!-- Ranking Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">热门作品榜</h3>
+                    <ul class="rank-list">
+                        <li>
+                            <span class="rank-num">1</span>
+                            <div class="rank-info">
+                                <h4>海贼王：黑胡子篇</h4>
+                                <span>1.2w 阅读</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num">2</span>
+                            <div class="rank-info">
+                                <h4>草帽团：未知的岛屿</h4>
+                                <span>9800 阅读</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num">3</span>
+                            <div class="rank-info">
+                                <h4>多弗朗明哥：修罗之路</h4>
+                                <span>8500 阅读</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <div class="rank-info">
+                                <h4>白胡子海贼团：旧时代的余晖</h4>
+                                <span>7200 阅读</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num">5</span>
+                            <div class="rank-info">
+                                <h4>路飞：觉醒果实能力</h4>
+                                <span>6500 阅读</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tags Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">热门标签</h3>
+                    <div class="tags-cloud">
+                        <a href="#" class="tag">路飞</a>
+                        <a href="#" class="tag">索隆</a>
+                        <a href="#" class="tag">娜美</a>
+                        <a href="#" class="tag">乔巴</a>
+                        <a href="#" class="tag">草帽海贼团</a>
+                        <a href="#" class="tag">海军</a>
+                        <a href="#" class="tag">七武海</a>
+                        <a href="#" class="tag">四皇</a>
+                        <a href="#" class="tag">恶魔果实</a>
+                        <a href="#" class="tag">霸气</a>
+                        <a href="#" class="tag">和之国</a>
+                        <a href="#" class="tag">顶上战争</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <section class="info-section">
+        <div class="info-content">
+            <h2>关于海贼王同人动漫平台</h2>
+            <p>“海贼王同人动漫”是一个致力于汇聚全球《海贼王》同人创作爱好者的综合性社区平台。我们相信，每一个读者心中都有一个属于自己的伟大航路。在这里，你可以看到基于原作角色和世界观延伸出的精彩故事，无论是热血的战斗、细腻的情感描写，还是脑洞大开的平行宇宙设定，都能在这里找到共鸣。</p>
+            <p>我们致力于维护一个尊重版权、鼓励创作、和谐友好的环境。平台上的作品均为创作者个人基于原作进行的二次创作，不代表官方立场。我们支持每一位创作者的才华，同时也呼吁广大读者在欣赏作品的同时，尊重原创劳动成果。</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="#">平台简介</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">广告合作</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>创作者中心</h3>
+                <ul>
+                    <li><a href="#">投稿规则</a></li>
+                    <li><a href="#">收益分成</a></li>
+                    <li><a href="#">创作工具</a></li>
+                    <li><a href="#">作品审核</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>帮助支持</h3>
+                <ul>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">版权申诉</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>关注我们</h3>
+                <p style="color:#888; font-size:14px; margin-bottom:10px;">获取最新同人资讯与活动通知。</p>
+                <div class="tags-cloud">
+                    <a href="#" class="tag">微博</a>
+                    <a href="#" class="tag">Bilibili</a>
+                    <a href="#" class="tag">Discord</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 One Piece Fan Community. All rights reserved. 本站为同人作品展示平台，非官方网站。</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('main-nav');
+            nav.classList.toggle('active');
+        }
+
+        // Simple interaction for buttons
+        document.querySelectorAll('button, .btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Prevent actual navigation for demo purposes
+                // In a real app, this would be actual links
+                e.preventDefault();
+                
+                // Add a visual feedback effect
+                const originalText = this.innerText;
+                this.style.opacity = '0.7';
+                setTimeout(() => {
+                    this.style.opacity = '1';
+                }, 150);
+                
+                // If it's a login button, show a simple alert (simulating login)
+                if(this.innerText.includes('登录')) {
+                    console.log('Login clicked');
+                }
+            });
+        });
+    </script>
+</body>
+                      </html>
